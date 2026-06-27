@@ -13,6 +13,15 @@ const { chromium } = require("playwright");
     {
       waitUntil: "networkidle"
     }
+    console.log(
+  'title:',
+  await page.title()
+);
+
+console.log(
+  'books:',
+  await page.locator('ol.list-book > li').count()
+);
   );
 
   const books = await page.evaluate(() => {
