@@ -8,12 +8,13 @@ const { chromium } = require("playwright");
 
   const page = await browser.newPage();
 
-  await page.goto(
-    "https://www.library.city.himeji.hyogo.jp/winj/opac/newly-list.do?key=0000056027",
-    {
-      waitUntil: "networkidle"
-    }
-  );
+await page.goto(
+  "https://www.library.city.himeji.hyogo.jp/winj/opac/newly.do"
+);
+
+await page.goto(
+  "https://www.library.city.himeji.hyogo.jp/winj/opac/newly-list.do?key=0000056027"
+);
 
   const books = await page.evaluate(() => {
     return [...document.querySelectorAll("ol.list-book > li")]
