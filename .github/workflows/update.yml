@@ -1,3 +1,7 @@
+concurrency:
+  group: library-monitor
+  cancel-in-progress: true
+
 name: update
 
 on:
